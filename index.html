@@ -2,13 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ZIYA MALIK</title>
 
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -27,10 +26,8 @@ fbq('track', 'PageView');
 <img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1822952059022758&ev=PageView&noscript=1"/>
 </noscript>
-<!-- End Meta Pixel Code -->
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -43,69 +40,48 @@ body{
     justify-content:center;
     align-items:center;
     padding:16px;
-
     font-family:Arial,Helvetica,sans-serif;
     color:#fff;
-
     background:
-    radial-gradient(
-        circle at 50% 8%,
-        #ff3333 0%,
-        #9b0000 22%,
+    radial-gradient(circle at 50% 5%,
+        #ff3030 0%,
+        #a00000 20%,
         #350000 48%,
-        #050505 100%
-    );
-
+        #050505 100%);
     overflow-x:hidden;
 }
 
 body::before{
     content:"";
     position:fixed;
-
     width:430px;
     height:430px;
-
     border-radius:50%;
-
     background:rgba(255,0,0,.22);
-
     filter:blur(100px);
-
     top:-180px;
     left:50%;
-
     transform:translateX(-50%);
-
     pointer-events:none;
 }
 
 .card{
     width:100%;
     max-width:430px;
-
     text-align:center;
-
     padding:25px 12px;
-
     position:relative;
     z-index:2;
 }
 
 .dp{
     display:block;
-
     width:118px;
     height:118px;
-
     margin:0 auto 18px;
-
     border-radius:50%;
-
     object-fit:cover;
-
     border:4px solid #ff2525;
-
     box-shadow:
         0 0 15px #ff0000,
         0 0 40px rgba(255,0,0,.75),
@@ -113,146 +89,113 @@ body::before{
 }
 
 h1{
-    font-size:clamp(24px,7vw,30px);
-
+    font-size:clamp(26px,7vw,32px);
     line-height:1.2;
-
-    font-weight:900;
-
+    font-weight:1000;
+    letter-spacing:1.5px;
     color:#fff;
-
-    margin-bottom:9px;
-
+    margin-bottom:10px;
     text-shadow:
-        0 2px 12px rgba(255,0,0,.65),
-        0 3px 15px rgba(0,0,0,.9);
+        0 2px 12px rgba(255,0,0,.8),
+        0 3px 15px rgba(0,0,0,.95);
 }
 
 .desc{
-    max-width:350px;
-
-    margin:0 auto 23px;
-
-    color:#ffb3b3;
-
+    max-width:370px;
+    margin:0 auto 18px;
+    color:#ffd0d0;
     font-size:14px;
-
-    line-height:1.55;
+    font-weight:800;
+    line-height:1.6;
 }
 
+/* FUTURISTIC STATUS */
+.future-text{
+    margin:0 auto 18px;
+    padding:10px 12px;
+    border:1px solid rgba(255,80,80,.55);
+    border-radius:12px;
+    background:rgba(0,0,0,.58);
+    color:#fff;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    box-shadow:0 0 18px rgba(255,0,0,.18);
+}
+
+.future-text span{
+    color:#ff5757;
+}
+
+/* TELEGRAM BUTTON */
 .join{
     position:relative;
     overflow:hidden;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     gap:9px;
-
     width:100%;
     min-height:58px;
-
     padding:16px 20px;
-
     border-radius:14px;
-
     border:2px solid #fff566;
-
     background:
-    linear-gradient(
-        135deg,
+    linear-gradient(135deg,
         #ffea00 0%,
         #ffd700 45%,
-        #b8860b 100%
-    );
-
+        #b8860b 100%);
     color:#000;
-
     text-decoration:none;
-
     font-size:18px;
-
-    font-weight:900;
-
-    letter-spacing:.4px;
-
+    font-weight:1000;
+    letter-spacing:.5px;
     box-shadow:
         0 5px 0 #5c4300,
         0 10px 30px rgba(255,215,0,.55);
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+    transition:transform .2s ease,box-shadow .2s ease;
 }
 
 .join::after{
     content:"";
-
     position:absolute;
-
     inset:0;
-
     border-radius:14px;
-
-    box-shadow:
-        0 0 25px rgba(255,230,0,.75);
-
+    box-shadow:0 0 25px rgba(255,230,0,.75);
     opacity:.7;
-
     animation:pulse 1.8s infinite;
-
     pointer-events:none;
-}
-
-@keyframes pulse{
-    0%,100%{
-        opacity:.35;
-    }
-
-    50%{
-        opacity:.9;
-    }
 }
 
 .join::before{
     content:"";
-
     position:absolute;
-
     top:0;
     left:-120%;
-
     width:55%;
     height:100%;
-
     background:
-    linear-gradient(
-        90deg,
+    linear-gradient(90deg,
         transparent,
         rgba(255,255,255,.85),
-        transparent
-    );
-
+        transparent);
     transform:skewX(-25deg);
-
     animation:shine 2.7s infinite;
 }
 
-@keyframes shine{
-    0%{
-        left:-120%;
-    }
+@keyframes pulse{
+    0%,100%{opacity:.35;}
+    50%{opacity:.9;}
+}
 
-    45%,100%{
-        left:150%;
-    }
+@keyframes shine{
+    0%{left:-120%;}
+    45%,100%{left:150%;}
 }
 
 .join:hover{
     transform:translateY(-3px);
-
     box-shadow:
         0 8px 0 #5c4300,
         0 15px 40px rgba(255,215,0,.8);
@@ -260,63 +203,60 @@ h1{
 
 .join:active{
     transform:translateY(2px);
-
-    box-shadow:
-        0 3px 0 #5c4300,
-        0 7px 18px rgba(255,215,0,.45);
 }
 
 .telegram{
     font-size:22px;
 }
 
+/* 4 SECOND COUNTDOWN */
+.countdown{
+    margin-top:12px;
+    color:#fff;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:.5px;
+}
+
+#seconds{
+    color:#ffe500;
+    font-size:15px;
+}
+
+/* INFO */
 .info{
     margin-top:20px;
-
     padding:14px 10px;
-
     border-radius:13px;
-
     border:1px solid rgba(255,70,70,.55);
-
     background:rgba(0,0,0,.70);
-
     backdrop-filter:blur(8px);
-
-    color:#ffcccc;
-
+    color:#ffd0d0;
     font-size:13px;
-
+    font-weight:800;
     line-height:1.9;
-
-    box-shadow:
-        0 0 20px rgba(255,0,0,.15);
+    box-shadow:0 0 20px rgba(255,0,0,.15);
 }
 
-.footer{
-    margin-top:20px;
-
-    color:#a88b8b;
-
-    font-size:11px;
-
-    line-height:1.6;
-}
-
+/* AD */
 .ad-container{
     margin-top:20px;
-
     width:100%;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 }
 
-@media(max-width:360px){
+/* FOOTER */
+.footer{
+    margin-top:20px;
+    color:#b89494;
+    font-size:11px;
+    font-weight:700;
+    line-height:1.6;
+}
 
+@media(max-width:360px){
     body{
         padding:10px;
     }
@@ -328,7 +268,6 @@ h1{
     .dp{
         width:95px;
         height:95px;
-
         margin-bottom:15px;
     }
 
@@ -336,28 +275,17 @@ h1{
         font-size:23px;
     }
 
-    .desc{
-        font-size:13px;
-
-        margin-bottom:20px;
-    }
-
     .join{
         min-height:54px;
-
         padding:14px;
-
         font-size:16px;
     }
 
     .info{
         font-size:12px;
     }
-
 }
-
 </style>
-
 </head>
 
 <body>
@@ -373,8 +301,12 @@ h1{
     <h1>ZIYA MALIK</h1>
 
     <p class="desc">
-        🎯 Gaming Updates • 🎁 Daily Free Gift Codes
+        🎯 GAMING UPDATES • 🎁 DAILY FREE GIFT CODES
     </p>
+
+    <div class="future-text">
+        ⚡ <span>FUTURE GAMING ZONE</span> • DAILY LIVE UPDATES ⚡
+    </div>
 
     <a
         id="telegramBtn"
@@ -387,13 +319,18 @@ h1{
         JOIN TELEGRAM
     </a>
 
-    <div class="info">
-        🔒 Safe & Secure<br>
-        🎯 Daily Updates<br>
-        🎁 Free Gift Codes
+    <div class="countdown">
+        Opening Telegram in <span id="seconds">4</span> seconds...
     </div>
 
-    <!-- ROJIEADS AD UNIT START -->
+    <div class="info">
+        🔒 SAFE & SECURE<br>
+        🎯 DAILY UPDATES<br>
+        🎁 FREE GIFT CODES<br>
+        ⚡ FUTURE GAMING CONTENT
+    </div>
+
+    <!-- ROJIEADS AD UNIT -->
     <div class="ad-container">
 
         <script type="text/javascript">
@@ -412,7 +349,6 @@ h1{
         </script>
 
     </div>
-    <!-- ROJIEADS AD UNIT END -->
 
     <div class="footer">
         © 2026 ZIYA MALIK<br>
@@ -421,7 +357,49 @@ h1{
 
 </div>
 
+<script>
+/*
+  4-second transparent Telegram redirect.
+  No fake clicks, hidden clicks, or simulated click events.
+*/
+(function(){
+
+    const btn = document.getElementById("telegramBtn");
+    const secondsEl = document.getElementById("seconds");
+
+    let seconds = 4;
+    let userClicked = false;
+
+    btn.addEventListener("click", function(){
+        userClicked = true;
+    });
+
+    const timer = setInterval(function(){
+
+        seconds--;
+
+        if(secondsEl){
+            secondsEl.textContent = seconds;
+        }
+
+        if(seconds <= 0){
+
+            clearInterval(timer);
+
+            if(!userClicked){
+                window.location.href = btn.href;
+            }
+
+        }
+
+    },1000);
+
+})();
+</script>
+
 </body>
 </html>
+
+
 
 
