@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -153,7 +152,14 @@ h1{
     box-shadow:
         0 5px 0 #5c4300,
         0 10px 30px rgba(255,215,0,.55);
-    transition:transform .2s ease,box-shadow .2s ease;
+    transition:transform .2s ease,box-shadow .2s ease, opacity .3s ease;
+}
+
+/* Timer disabled state */
+.join.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+    filter: grayscale(40%);
 }
 
 .join::after{
@@ -211,14 +217,14 @@ h1{
 .countdown{
     margin-top:12px;
     color:#fff;
-    font-size:12px;
+    font-size:13px;
     font-weight:900;
     letter-spacing:.5px;
 }
 
 #seconds{
     color:#ffe500;
-    font-size:15px;
+    font-size:16px;
 }
 
 .info{
@@ -303,19 +309,20 @@ h1{
         ⚡ <span>FUTURE GAMING ZONE</span> • DAILY LIVE UPDATES ⚡
     </div>
 
+    <!-- Timer chalne tak button disabled rahega -->
     <a
         id="telegramBtn"
-        class="join"
+        class="join disabled"
         href="https://t.me/+dz8mJ9Pksq5hZWNl"
         target="_blank"
         rel="noopener noreferrer"
     >
         <span class="telegram">✈️</span>
-        JOIN TELEGRAM
+        <span id="btnText">PLEASE WAIT...</span>
     </a>
 
-    <div class="countdown">
-        Opening Telegram in <span id="seconds">4</span> seconds...
+    <div class="countdown" id="countdownBox">
+        Link unlocks in <span id="seconds">4</span> seconds...
     </div>
 
     <div class="info">
@@ -327,7 +334,6 @@ h1{
 
     <!-- ROJIEADS AD UNIT -->
     <div class="ad-container">
-
         <script type="text/javascript">
             atOptions = {
                 'key' : 'YOUR_ROJIEADS_KEY_HERE',
@@ -337,12 +343,10 @@ h1{
                 'params' : {}
             };
         </script>
-
         <script
             type="text/javascript"
             src="//www.highperformanceformat.com/YOUR_ROJIEADS_KEY_HERE/invoke.js">
         </script>
-
     </div>
 
     <div class="footer">
@@ -353,24 +357,15 @@ h1{
 </div>
 
 <script>
-/*
-  4-second Telegram redirect.
-  No fake clicks or simulated click events.
-*/
 (function(){
-
     const btn = document.getElementById("telegramBtn");
+    const btnText = document.getElementById("btnText");
     const secondsEl = document.getElementById("seconds");
+    const countdownBox = document.getElementById("countdownBox");
 
     let seconds = 4;
-    let userClicked = false;
-
-    btn.addEventListener("click", function(){
-        userClicked = true;
-    });
 
     const timer = setInterval(function(){
-
         seconds--;
 
         if(secondsEl){
@@ -378,17 +373,14 @@ h1{
         }
 
         if(seconds <= 0){
-
             clearInterval(timer);
-
-            if(!userClicked){
-                window.location.href = btn.href;
+            btn.classList.remove("disabled");
+            btnText.textContent = "JOIN TELEGRAM";
+            if(countdownBox){
+                countdownBox.textContent = "✅ Link is Ready! Click above to join.";
             }
-
         }
-
-    },1000);
-
+    }, 1000);
 })();
 </script>
 
